@@ -36,7 +36,7 @@ NOTE: If the unit test is not on, that code will not be compiled!
 // Individual unit test toggles
 #define LAB1_DEFAULT_CONSTRUCTOR_NO_ARGS			1
 #define LAB1_DEFAULT_CONSTRUCTOR_WITH_ARGS			1
-#define LAB1_BRACKET_OPERATOR						0
+#define LAB1_BRACKET_OPERATOR						1
 #define LAB1_SIZE_ACCESSOR							0
 #define LAB1_CAPACITY_ACCESSOR						0
 #define LAB1_RESERVE_EMPTY							0
@@ -65,7 +65,7 @@ class DynArray {
 
 public:
 
-	DynArray(size_t _startingCap = 0):mArray(nullptr), mSize(0), mCapacity(0)
+	DynArray(size_t _startingCap = 0):mArray(nullptr), mSize(0), mCapacity(0) //Default Constructor 
 	{
 		// TODO: Implement this method
 		if (_startingCap > 0)
@@ -75,15 +75,24 @@ public:
 		}
 	};
 
-	~DynArray() 
+	~DynArray() //Destrutor 
 	{
 		// TODO: Implement this method
 		delete[] mArray;
 	}
 
-	DynArray(const DynArray& _copy) {
+	DynArray(const DynArray& _copy) :mArray(nullptr), mSize(_copy.mSize), mCapacity(_copy.mCapacity) //Copy Constructor
+	{
 		// TODO: Implement this method
+		if (mCapacity > 0)
+		{
+			mArray = new Type[mCapacity];
 
+			for (size_t i = 0; i < mSize; i++)
+			{
+				mArray[i] = _copy.mArray[i];
+			}
+		}
 	}
 
 	DynArray& operator=(const DynArray& _assign) {

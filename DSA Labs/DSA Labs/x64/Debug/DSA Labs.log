@@ -13,5 +13,4 @@
   UnitTests_Lab7.cpp
   UnitTests_Lab8.cpp
   Generating Code...
-ResultsLibD.lib(ResultsLib.obj) : warning LNK4099: PDB '' was not found with 'ResultsLibD.lib(ResultsLib.obj)' or at ''; linking object as if no debug info
-  DSA Labs.vcxproj -> \\Mac\Home\Desktop\SDV\DSA Labs\x64\Debug\DSA Labs.exe
+\\Mac\Home\Desktop\SDV\DSA Labs\DSA Labs\DynArray.h(111): error C4716: 'DynArray<int>::operator[]': must return a value
