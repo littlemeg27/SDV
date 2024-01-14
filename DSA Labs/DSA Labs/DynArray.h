@@ -3,7 +3,7 @@ File:			DynArray.h
 Author(s):
 	Base:		Justin Tackett
 				jtackett@fullsail.com
-	Student:
+	Student:	Brenna Pavlinchak
 
 Purpose:		A dynamically-allocated resizeable array (similar to std::vector)
 Notes:			Property of Full Sail University 2401
@@ -37,7 +37,7 @@ NOTE: If the unit test is not on, that code will not be compiled!
 #define LAB1_DEFAULT_CONSTRUCTOR_NO_ARGS			1
 #define LAB1_DEFAULT_CONSTRUCTOR_WITH_ARGS			1
 #define LAB1_BRACKET_OPERATOR						1
-#define LAB1_SIZE_ACCESSOR							0
+#define LAB1_SIZE_ACCESSOR							1
 #define LAB1_CAPACITY_ACCESSOR						0
 #define LAB1_RESERVE_EMPTY							0
 #define LAB1_RESERVE_DOUBLE_CAPACITY				0
@@ -81,21 +81,22 @@ public:
 		delete[] mArray;
 	}
 
-	DynArray(const DynArray& _copy) :mArray(nullptr), mSize(_copy.mSize), mCapacity(_copy.mCapacity) //Copy Constructor
+	DynArray(const DynArray& _copy) : mArray(nullptr), mSize(_copy.mSize), mCapacity(_copy.mCapacity) //Copy Constructor
 	{
 		// TODO: Implement this method
 		if (mCapacity > 0)
 		{
 			mArray = new Type[mCapacity];
 
-			for (size_t i = 0; i < mSize; i++)
+			for (int i = 0; i < mSize; i++)
 			{
 				mArray[i] = _copy.mArray[i];
 			}
 		}
 	}
 
-	DynArray& operator=(const DynArray& _assign) {
+	DynArray& operator=(const DynArray& _assign) 
+	{
 		// TODO: Implement this method
 
 	}
@@ -105,14 +106,18 @@ public:
 
 	}
 
-	Type& operator[](size_t _index) {
+	Type& operator[](size_t _index) 
+	{
 		// TODO: Implement this method
 	
+		return void;
 	}
 
-	size_t Size() const {
+	size_t Size() const 
+	{
 		// TODO: Implement this method
-
+		
+		return 0;
 	}
 
 	size_t Capacity() const {

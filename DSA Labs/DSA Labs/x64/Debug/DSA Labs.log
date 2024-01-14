@@ -3,8 +3,22 @@
   DSA_Main.cpp
   Memory_Management.cpp
   TestHarness.cpp
+\\mac\Home\Desktop\SDV\DSA Labs\DSA Labs\DynArray.h(113,14): error C2760: syntax error: ';' was unexpected here; expected 'expression'
+  (compiling source file 'TestFiles/TestHarness.cpp')
+  \\mac\Home\Desktop\SDV\DSA Labs\DSA Labs\DynArray.h(113,14):
+  the template instantiation context (the oldest one first) is
+  	\\mac\Home\Desktop\SDV\DSA Labs\DSA Labs\DynArray.h(137,2):
+  	see reference to class template instantiation 'DynArray<Type>' being compiled
+  
   UnitTestHelper.cpp
   UnitTests_Lab1.cpp
+\\mac\Home\Desktop\SDV\DSA Labs\DSA Labs\DynArray.h(113,14): error C2760: syntax error: ';' was unexpected here; expected 'expression'
+  (compiling source file 'TestFiles/UnitTests_Lab1.cpp')
+  \\mac\Home\Desktop\SDV\DSA Labs\DSA Labs\DynArray.h(113,14):
+  the template instantiation context (the oldest one first) is
+  	\\mac\Home\Desktop\SDV\DSA Labs\DSA Labs\DynArray.h(137,2):
+  	see reference to class template instantiation 'DynArray<Type>' being compiled
+  
   UnitTests_Lab2.cpp
   UnitTests_Lab3.cpp
   UnitTests_Lab4.cpp
@@ -13,4 +27,3 @@
   UnitTests_Lab7.cpp
   UnitTests_Lab8.cpp
   Generating Code...
-\\Mac\Home\Desktop\SDV\DSA Labs\DSA Labs\DynArray.h(111): error C4716: 'DynArray<int>::operator[]': must return a value
