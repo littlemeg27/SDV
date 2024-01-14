@@ -1,0 +1,17 @@
+﻿  BitStream.cpp
+  Console.cpp
+  DSA_Main.cpp
+  Memory_Management.cpp
+  TestHarness.cpp
+  UnitTestHelper.cpp
+  UnitTests_Lab1.cpp
+  UnitTests_Lab2.cpp
+  UnitTests_Lab3.cpp
+  UnitTests_Lab4.cpp
+  UnitTests_Lab5.cpp
+  UnitTests_Lab6.cpp
+  UnitTests_Lab7.cpp
+  UnitTests_Lab8.cpp
+  Generating Code...
+ResultsLibD.lib(ResultsLib.obj) : warning LNK4099: PDB '' was not found with 'ResultsLibD.lib(ResultsLib.obj)' or at ''; linking object as if no debug info
+  DSA Labs.vcxproj -> \\Mac\Home\Desktop\SDV\DSA Labs\x64\Debug\DSA Labs.exe

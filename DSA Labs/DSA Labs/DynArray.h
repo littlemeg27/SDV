@@ -31,10 +31,10 @@ NOTE: If the unit test is not on, that code will not be compiled!
 */
 
 // Main toggle
-#define LAB_1	0
+#define LAB_1	1
 
 // Individual unit test toggles
-#define LAB1_DEFAULT_CONSTRUCTOR_NO_ARGS			0
+#define LAB1_DEFAULT_CONSTRUCTOR_NO_ARGS			1
 #define LAB1_DEFAULT_CONSTRUCTOR_WITH_ARGS			0
 #define LAB1_BRACKET_OPERATOR						0
 #define LAB1_SIZE_ACCESSOR							0
@@ -65,9 +65,14 @@ class DynArray {
 
 public:
 
-	DynArray(size_t _startingCap = 0) {
+	DynArray(size_t _startingCap = 0):mArray(nullptr), mSize(0), mCapacity(0)
+	{
 		// TODO: Implement this method
-		
+		if (_startingCap > 0)
+		{
+			mCapacity = _startingCap;
+			mArray = new Type[_startingCap];
+		}
 	};
 
 	~DynArray() {
