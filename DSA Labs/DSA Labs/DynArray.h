@@ -34,21 +34,21 @@ NOTE: If the unit test is not on, that code will not be compiled!
 #define LAB_1	1
 
 // Individual unit test toggles
-#define LAB1_DEFAULT_CONSTRUCTOR_NO_ARGS			1
-#define LAB1_DEFAULT_CONSTRUCTOR_WITH_ARGS			1
-#define LAB1_BRACKET_OPERATOR						1
-#define LAB1_SIZE_ACCESSOR							1
-#define LAB1_CAPACITY_ACCESSOR						1
-#define LAB1_RESERVE_EMPTY							1
-#define LAB1_RESERVE_DOUBLE_CAPACITY				1
+#define LAB1_DEFAULT_CONSTRUCTOR_NO_ARGS			0
+#define LAB1_DEFAULT_CONSTRUCTOR_WITH_ARGS			0
+#define LAB1_BRACKET_OPERATOR						0
+#define LAB1_SIZE_ACCESSOR							0
+#define LAB1_CAPACITY_ACCESSOR						0
+#define LAB1_RESERVE_EMPTY							0
+#define LAB1_RESERVE_DOUBLE_CAPACITY				0
 #define LAB1_RESERVE_LARGER_CAPACITY				1
-#define LAB1_RESERVE_SMALLER_CAPACITY				1
-#define LAB1_APPEND_NO_RESIZE						1
-#define LAB1_APPEND_RESIZE							1
-#define LAB1_CLEAR									1
-#define LAB1_DESTRUCTOR								1
-#define LAB1_ASSIGNMENT_OPERATOR					1
-#define LAB1_COPY_CONSTRUCTOR						1
+#define LAB1_RESERVE_SMALLER_CAPACITY				0
+#define LAB1_APPEND_NO_RESIZE						0
+#define LAB1_APPEND_RESIZE							0
+#define LAB1_CLEAR									0
+#define LAB1_DESTRUCTOR								0
+#define LAB1_ASSIGNMENT_OPERATOR					0
+#define LAB1_COPY_CONSTRUCTOR						0
 
 // Our implementation of a vector (simplified)
 template<typename Type>
@@ -75,7 +75,7 @@ public:
 		}
 	};
 
-	~DynArray() //Destrutor 
+	~DynArray() //Default Constructor no args
 	{
 		// TODO: Implement this method
 		delete[] mArray;
@@ -90,7 +90,7 @@ public:
 		}
 	}
 
-	DynArray& operator=(const DynArray& _assign) 
+	DynArray& operator=(const DynArray& _assign) //[] Operator 
 	{
 		// TODO: Implement this method
 		if (this != &_assign) 
@@ -108,7 +108,7 @@ public:
 		return *this;
 	}
 
-	void Clear() 
+	void Clear() //Clear
 	{
 		// TODO: Implement this method
 		delete[] mArray;
@@ -117,25 +117,25 @@ public:
 		mCapacity = 0;
 	}
 
-	Type& operator[](size_t _index) 
+	Type& operator[](size_t _index) //[] Operator 
 	{
 		// TODO: Implement this method
 		return mArray[_index];
 	}
 
-	size_t Size() const 
+	size_t Size() const //Size
 	{
 		// TODO: Implement this method
 		return mSize;
 	}
 
-	size_t Capacity() const 
+	size_t Capacity() const //Capacity
 	{
 		// TODO: Implement this method
 		return mCapacity;
 	}
 
-	void Append(const Type& _data) 
+	void Append(const Type& _data) //Append
 	{
 		// TODO: Implement this method
 		if(mSize >= mCapacity) 
@@ -147,15 +147,15 @@ public:
 		mSize++;
 	}
 
-	void Reserve(size_t _newCapacity = 0) 
+	void Reserve(size_t _newCapacity = 0) //Reserve 
 	{
 		// TODO: Implement this method
-		if (_newCapacity == 0 && mCapacity == 0) 
+		if (_newCapacity == 0 && mCapacity == 0) //Reserve from empty 
 		{
 			_newCapacity = 1;
 		}
 
-		if (_newCapacity < mCapacity * 2)
+		if (_newCapacity < mCapacity * 2) //Reserve with default 
 		{ 
 			_newCapacity = mCapacity * 2;
 		}
