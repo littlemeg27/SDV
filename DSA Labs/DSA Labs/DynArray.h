@@ -42,12 +42,12 @@ NOTE: If the unit test is not on, that code will not be compiled!
 #define LAB1_RESERVE_EMPTY							0
 #define LAB1_RESERVE_DOUBLE_CAPACITY				0
 #define LAB1_RESERVE_LARGER_CAPACITY				1
-#define LAB1_RESERVE_SMALLER_CAPACITY				0
-#define LAB1_APPEND_NO_RESIZE						0
-#define LAB1_APPEND_RESIZE							0
-#define LAB1_CLEAR									0
-#define LAB1_DESTRUCTOR								0
-#define LAB1_ASSIGNMENT_OPERATOR					0
+#define LAB1_RESERVE_SMALLER_CAPACITY				1
+#define LAB1_APPEND_NO_RESIZE						1
+#define LAB1_APPEND_RESIZE							1
+#define LAB1_CLEAR									1
+#define LAB1_DESTRUCTOR								1
+#define LAB1_ASSIGNMENT_OPERATOR					1
 #define LAB1_COPY_CONSTRUCTOR						0
 
 // Our implementation of a vector (simplified)
@@ -156,22 +156,25 @@ public:
 		}
 
 		if (_newCapacity < mCapacity * 2) //Reserve with default 
-		{ 
-			_newCapacity = mCapacity * 2;
-		}
-			
-		if (_newCapacity <= mCapacity) 
 		{
-			return;
+			_newCapacity = mCapacity * 2;
 		}
 
 		Type* newArray = new Type[_newCapacity];
 
-		for (size_t i = 0; i < mSize; i++) 
+		if (_newCapacity <= mCapacity)
 		{
-			newArray[i] = mArray[i];
+			for (size_t i = 0; i < mSize; i++) //Reserve with larger 
+			{
+				newArray[i] = mArray[i];
+			}
 		}
 
+		if (_newCapacity <= mCapacity) //Reserve with smaller 
+		{
+			return;
+		}
+	
 		delete[] mArray;
 		mArray = newArray;
 		mCapacity = _newCapacity;
